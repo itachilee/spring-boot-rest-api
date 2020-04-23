@@ -1,7 +1,7 @@
 package com.easement.mes;
 
 import com.easement.mes.model.Users;
-import com.easement.mes.model.UsersRepository;
+import com.easement.mes.repository.UsersRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

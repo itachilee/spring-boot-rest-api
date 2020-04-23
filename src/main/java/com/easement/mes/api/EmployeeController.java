@@ -1,8 +1,8 @@
 package com.easement.mes.api;
 
-import com.easement.mes.errors.ResourceNotFoundException;
+import com.easement.mes.exceptions.ResourceNotFoundException;
 import com.easement.mes.model.Employee;
-import com.easement.mes.model.EmployeeRepository;
+import com.easement.mes.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

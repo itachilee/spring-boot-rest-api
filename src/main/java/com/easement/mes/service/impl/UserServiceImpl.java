@@ -1,7 +1,7 @@
 package com.easement.mes.service.impl;
 
 import com.easement.mes.model.Users;
-import com.easement.mes.model.UsersRepository;
+import com.easement.mes.repository.UsersRepository;
 import com.easement.mes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
