@@ -1,7 +1,7 @@
 package com.easement.mes.api;
 
-import com.easement.mes.model.UserType;
-import com.easement.mes.service.UserTypeService;
+import com.easement.mes.model.TableWater;
+import com.easement.mes.service.TableWaterService;
 import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,45 +15,45 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/v1")
-public class UserTypeController {
+public class TableWaterController {
+
 
     @Autowired
-    private UserTypeService userTypeService;
+    private TableWaterService tableUserService;
 
     @ApiOperation(value = "获取用户类型列表", notes = "获取用户类型列表")
-    @GetMapping(value = "userTypes")
+    @GetMapping(value = "tableWaters")
     @ResponseStatus(HttpStatus.OK)
-    @CrossOrigin("http://localhost:3000")
-    public List<UserType> getUserType() {
-        return userTypeService.getUserTypeList();
+    public List<TableWater> getUserType() {
+        return tableUserService.getTableWaterList();
     }
 
     @ApiOperation(value = "添加用户类型", notes = "添加用户类型")
-    @PostMapping(value = "/userTypes")
+    @PostMapping(value = "/tableWaters")
     @ResponseStatus(HttpStatus.CREATED)
-    public Object addUserType(@RequestBody UserType userType) {
-        return userTypeService.addUserType(userType);
+    public Object addUserType(@RequestBody TableWater tableWater) {
+        return tableUserService.addTableWater(tableWater);
     }
 
     @ApiOperation(value = "获取用户类型信息", notes = "根据id获取用户类型信息")
-    @GetMapping(value = "/userTypes/{id}")
+    @GetMapping(value = "/tableWaters/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Object getUserType(@PathVariable("id") long id) throws NotFoundException {
-        return userTypeService.getUserType(id);
+        return tableUserService.getTableWater(id);
     }
 
     @ApiOperation(value = "删除用户类型", notes = "删除用户类型")
-    @DeleteMapping(value = "/userTypes/{id}")
+    @DeleteMapping(value = "/tableWaters/{id}")
     public void deleteUser(@PathVariable("id") long id) {
-        userTypeService.deleteUserType(id);
+        tableUserService.deleteTableWater(id);
     }
 
 
     @ApiOperation(value="更新用户", notes="更新用户")
-    @PatchMapping(value = "/userTypes/{id}")
+    @PatchMapping(value = "/tableWaters/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public UserType updateUser(@PathVariable("id") long id, @RequestBody UserType userType)
+    public TableWater updateUser(@PathVariable("id") long id, @RequestBody TableWater tableWater)
     {
-        return userTypeService.update(id, userType);
+        return tableUserService.update(id, tableWater);
     }
 }

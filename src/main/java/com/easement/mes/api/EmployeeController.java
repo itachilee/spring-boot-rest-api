@@ -15,6 +15,9 @@ import java.util.List;
 import java.util.Map;
 
 
+/**
+ * @author leon
+ */
 @RestController
 @RequestMapping("/api/v1")
 public class EmployeeController {
@@ -62,7 +65,7 @@ public class EmployeeController {
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
 
         employeeRepository.delete(employee);
-        Map<String, Boolean> response = new HashMap<>();
+        Map<String, Boolean> response = new HashMap<>(10);
         response.put("deleted", Boolean.TRUE);
         return response;
     }

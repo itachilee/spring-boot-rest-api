@@ -1,5 +1,8 @@
 package com.easement.mes.exceptions;
 
+/**
+ * @author leon
+ */
 public class Result
 {
     /**

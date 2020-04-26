@@ -5,7 +5,11 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 
+/**
+ * @author leon
+ */
 @GenericGenerator(name = "jpa-uuid", strategy = "uuid")
 @Entity
 @Table(name = "TABLE_usertype")
@@ -25,6 +29,7 @@ public class UserType {
     public void setId(Long id) {
         this.id = id;
     }
+
     @Column(name = "usertype", nullable = false)
     public String getType() {
         return type;
@@ -33,6 +38,7 @@ public class UserType {
     public void setType(String type) {
         this.type = type;
     }
+
     @Column(name = "createtime", nullable = false)
     public Date getCreateTime() {
         return createTime;
@@ -41,4 +47,6 @@ public class UserType {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+
 }

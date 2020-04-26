@@ -29,9 +29,13 @@ public class Users {
 
     @Override
     public String toString() {
-        return ("name=" + this.userName + ",age=" + this.age + ",pass=" + this.password);
+        return "Users{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", age=" + age +
+                ", password='" + password + '\'' +
+                '}';
     }
-
 
     public long getId() {
         return id;
