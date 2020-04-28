@@ -1,9 +1,7 @@
 package com.easement.mes.service;
 
 import com.easement.mes.model.TableWater;
-import com.easement.mes.model.UserType;
 import com.easement.mes.repository.TableWaterRepository;
-import com.easement.mes.repository.UserTypeRepository;
 import com.easement.mes.util.Util;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
