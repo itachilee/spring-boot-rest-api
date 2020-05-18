@@ -6,6 +6,7 @@ import com.easement.mes.repository.TableUserRepository;
 import com.easement.mes.util.Util;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,7 +29,9 @@ public class TableUserService {
     public TableUser addTableUser(TableUser tableUser) {
         return tableUserRepository.save(tableUser);
     }
-
+    public Iterable<TableUser> getUserList(Pageable pageable){
+        return tableUserRepository.findAll(pageable);
+    }
     public List<TableUser> getTableUserList() {
         return tableUserRepository.findAll();
     }

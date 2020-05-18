@@ -4,7 +4,11 @@ import com.easement.mes.model.TableUser;
 import com.easement.mes.service.TableUserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +28,14 @@ public class TableUserController {
     public List<TableUser> getUserType() {
         return tableUserService.getTableUserList();
     }
+    @GetMapping("/userLists")
+    public ResponseEntity<?> getList(
+            @RequestParam(value="page", defaultValue="0") int page,
+            @RequestParam(value="size", defaultValue="10") int size ) {
 
+        Pageable pageable = PageRequest.of(page, size, Sort.unsorted());
+        return new ResponseEntity<Object>(tableUserService.getUserList(pageable), HttpStatus.OK);
+    }
     @ApiOperation(value = "添加用户", notes = "添加用户")
     @PostMapping(value = "/tableUsers")
     @ResponseStatus(HttpStatus.CREATED)
