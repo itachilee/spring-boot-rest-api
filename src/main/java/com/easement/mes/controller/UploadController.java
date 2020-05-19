@@ -38,7 +38,7 @@ public class UploadController {
 
         String fileName = file.getOriginalFilename();
         String filePath = "D:\\upload";
-        File dest = new File(filePath + fileName);
+        File dest = new File(filePath + "\\" + fileName);
         try {
             file.transferTo(dest);
             LOGGER.info("上传成功");
