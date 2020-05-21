@@ -1,3 +1,13 @@
 spring:
   profiles:
     active: dev
+  flyway:
+    enabled: true
+    # 禁止清理数据库表
+    clean-disabled: true
+    # 如果数据库不是空表，需要设置为true,否则启动报错
+    baseline-on-migrate: true
+    # 与 baseline-on-migrate: true 搭配使用
+    baseline-version: 0
+    locations:
+      - classpath:db/migration
